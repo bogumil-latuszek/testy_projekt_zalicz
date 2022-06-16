@@ -3,6 +3,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace SeleniumCSharpTutorials
 {
@@ -12,9 +14,11 @@ namespace SeleniumCSharpTutorials
         [Test]
         public void TestMethod()
         {
-            // TODO: Add your test code here
-            var answer = 42;
-            Assert.That(answer, Is.EqualTo(42), "Some useful error messageASDFGHJK");
+            IWebDriver driver = new ChromeDriver();
+            driver.Url = "https://www.facebook.com";
+            IWebElement emailTxtField = driver.FindElement(By.XPath(".//*[@id='email']"));
+            emailTxtField.SendKeys("Selenium C#");
+            driver.Quit();
         }
     }
 }
