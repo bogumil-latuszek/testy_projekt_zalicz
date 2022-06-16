@@ -13,28 +13,26 @@ namespace SeleniumCSharpTutorials
     [TestFixture]
     public class TestClass : BaseTest
     {
-        [Test]
+        [Test, Category("Smoke Testing")]
         public void TestMethod1()
         {
             IWebElement emailTxtField = driver.FindElement(By.XPath(".//*[@id='email']"));
             emailTxtField.SendKeys("Selenium C#");
-            Thread.Sleep(2000);
         }
 
-        [Test]
+        [Test, Category("Regression Testing")]
         public void TestMethod2()
         {
             IWebElement emailTxtField = driver.FindElement(By.XPath(".//*[@id='email']"));
             emailTxtField.SendKeys("Selenium C#");
-            Thread.Sleep(2000);
         }
 
-        [Test]
+        [Test, Category("Smoke Testing")]
         public void TestMethod3()
         {
             IWebElement emailTxtField = driver.FindElement(By.XPath(".//*[@id='email']"));
             emailTxtField.SendKeys("Selenium C#");
-            Thread.Sleep(2000);
+            Thread.Sleep(5000);
         }
     }
 }
