@@ -16,6 +16,7 @@ namespace SeleniumCSharpTutorials.BaseClass
         [OneTimeSetUp]
         public void Open() {
             driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
             driver.Url = "https://www.facebook.com";
         }
 

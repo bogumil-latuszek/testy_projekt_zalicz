@@ -15,7 +15,6 @@ namespace SeleniumCSharpTutorials
         [Test]
         public void TestMethod()
         {
-            
             IWebElement emailTxtField = driver.FindElement(By.XPath(".//*[@id='email']"));
             emailTxtField.SendKeys("Selenium C#");
         }
