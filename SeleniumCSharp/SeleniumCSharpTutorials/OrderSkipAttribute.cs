@@ -8,6 +8,8 @@ using OpenQA.Selenium.Chrome;
 using SeleniumCSharpTutorials.BaseClass;
 using System.Threading;
 using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
 
 namespace SeleniumCSharpTutorials
 {
@@ -17,9 +19,23 @@ namespace SeleniumCSharpTutorials
         [Test, Category("Regression Testing")]
         public void TestMethod2()
         {
+            IWebDriver driver = new FirefoxDriver();
+            driver.Url = "https://www.facebook.com/";
             IWebElement emailTxtField = driver.FindElement(By.XPath(".//*[@id='email']"));
             emailTxtField.SendKeys("Selenium C#");
+            driver.Close();
         }
-        
+
+        [Test, Category("OrderSkipAttribute")]
+        public void TestMethod3()
+        {
+            IWebDriver driver = new InternetExplorerDriver();
+            driver.Url = "https://www.facebook.com/";
+            IWebElement emailTxtField = driver.FindElement(By.XPath(".//*[@id='email']"));
+            emailTxtField.SendKeys("Selenium C#");
+            driver.Close();
+        }
+
+
     }
 }
