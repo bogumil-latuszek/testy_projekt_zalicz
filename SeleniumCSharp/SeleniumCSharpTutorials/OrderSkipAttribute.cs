@@ -16,7 +16,18 @@ namespace SeleniumCSharpTutorials
     [TestFixture]
     public class OrderSkipAttribute 
     {
-        [Test, Category("Regression Testing")]
+        [Test, Order(2), Category("OrderSkipAttribute")]
+        public void TestMethod1()
+        {
+            Assert.Ignore("defect 12343");
+            IWebDriver driver = new ChromeDriver();
+            driver.Url = "https://www.facebook.com/";
+            IWebElement emailTxtField = driver.FindElement(By.XPath(".//*[@id='email']"));
+            emailTxtField.SendKeys("Selenium C#");
+            driver.Close();
+        }
+
+        [Test, Order(1), Category("OrderSkipAttribute")]
         public void TestMethod2()
         {
             IWebDriver driver = new FirefoxDriver();
@@ -26,7 +37,7 @@ namespace SeleniumCSharpTutorials
             driver.Close();
         }
 
-        [Test, Category("OrderSkipAttribute")]
+        [Test, Order(0), Category("OrderSkipAttribute")]
         public void TestMethod3()
         {
             IWebDriver driver = new InternetExplorerDriver();
