@@ -34,7 +34,7 @@ using NUnit.Framework;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 //to define [Test] attributes
-[assembly: Parallelizable(ParallelScope.Children)]
+//[assembly: Parallelizable(ParallelScope.Children)]
 
 //number of browsers
-[assembly: LevelOfParallelism(4)]
+//[assembly: LevelOfParallelism(4)]
