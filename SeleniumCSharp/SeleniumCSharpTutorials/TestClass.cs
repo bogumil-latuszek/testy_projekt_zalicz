@@ -25,15 +25,15 @@ namespace SeleniumCSharpTutorials
             cookieButton.Click();
             Thread.Sleep(1000);
 
-            IWebElement regButton = driver.FindElement(By.XPath("//a[@role='button'][@data-testid='open-registration-form-button']"));//[@ajaxify=' / reg / spotlight / ']
+            IWebElement regButton = driver.FindElement(By.XPath("//a[@role='button'][@data-testid='open-registration-form-button']"));
             regButton.Click();
             Thread.Sleep(5000);
 
-            //IWebElement monthDropdownList = driver.FindElement(By.XPath(".//*[@id='month']"));
-            //SelectElement element = new SelectElement(monthDropdownList);
-            //element.SelectByIndex(1);
-            //element.SelectByText("Mar");
-            //element.SelectByValue("6");
+            IWebElement monthDropdownList = driver.FindElement(By.XPath(".//*[@id='month']"));
+            SelectElement element = new SelectElement(monthDropdownList);
+            element.SelectByIndex(1);
+            element.SelectByText("mar");
+            element.SelectByValue("6");
         }
 
         /*
