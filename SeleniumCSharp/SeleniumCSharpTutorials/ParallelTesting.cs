@@ -25,5 +25,21 @@ namespace SeleniumCSharpTutorials
             emailTxtField.SendKeys("Selenium C#");
             Driver.Close();
         }
+        [Test, Category("UAT Testing"), Category("Module1")]
+        public void TestMethod2()
+        {
+            var Driver = new BrowserUtility().Init(driver);
+            IWebElement emailTxtField = Driver.FindElement(By.XPath(".//*[@id='email']"));
+            emailTxtField.SendKeys("Selenium C#");
+            Driver.Close();
+        }
+        [Test, Category("UAT Testing"), Category("Module1")]
+        public void TestMethod3()
+        {
+            var Driver = new BrowserUtility().Init(driver);
+            IWebElement emailTxtField = Driver.FindElement(By.XPath(".//*[@id='email']"));
+            emailTxtField.SendKeys("Selenium C#");
+            Driver.Close();
+        }
     }
 }
